@@ -1,0 +1,38 @@
+#include<stdio.h>
+int sum_of_digits(int val){
+    int sum = 0 , i , rem;
+    if(val < 10){
+        for(i = 1 ; i <= val ; i++){
+            sum = sum + i;
+        }
+    }
+    else{
+        for(i = 1 ; i <= 9 ; i++) {
+            sum = sum + i;
+        }
+        for(i = 10 ; i <= val ; i++){
+        while(i){
+        rem = i % 10;
+        sum = sum + rem;
+        i = i / 10;
+    } }
+}
+  return sum;
+   }
+int main()
+{
+	int tc , i;
+	printf("Enter the no. of test cases?\n");
+	scanf("%d",&tc);                   //takes the no. of values;
+	int array[tc];
+	printf("Enter the elements:\n");
+	for(i = 0 ; i < tc ; i++){
+	    scanf("%i" , &array[i]);     //takes all the values;
+	}
+	
+	for(i = 0 ; i < tc ; i++){
+	    int sum = sum_of_digits(array[i]);   //send 1 by 1 value for sum;
+	    printf(" sum is : %i\n" , sum);
+	}
+	return 0;
+}
