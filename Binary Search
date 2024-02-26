@@ -1,0 +1,13 @@
+                                                                                          BINARY SEARCH
+
+1.Algorithm which is used to find a KEY in a sorted data.
+2.Binary search only works on sorted data(Ascending of Ddecending).
+                                                             //Algorithm for find a KEY in a array:
+step 1: Take two variables LOW and HIGH.
+step 2: Set LOW to 0 and HIGH to length - 1.
+step 3: Run a loop as long as LOW <= HIGH.
+   step 4:Compute a value called MID = (LOW + HIGH) / 2.
+   step 5: 
+             case i: If A[MID] == KEY , return MID.
+             case ii: If A[MID] > KEY , then set HIGH to MID - 1.
+             case iii: If A[MID] < KEY , then set LOW to MID + 1.
