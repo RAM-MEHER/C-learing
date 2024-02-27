@@ -11,3 +11,4 @@ step 3: Run a loop as long as LOW <= HIGH.
              case i: If A[MID] == KEY , return MID.
              case ii: If A[MID] > KEY , then set HIGH to MID - 1.
              case iii: If A[MID] < KEY , then set LOW to MID + 1.
+THE END
