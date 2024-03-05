@@ -1,0 +1,15 @@
+                                                           /*    QUICK SORT    */
+1.Invented in the year 1959.
+2.Inventor --> Richard Hoare (Turing award in 1980)
+3.One of the top 10 algorithsm invented.
+4.Sub rotiune --> Partitioning.
+5.Pivot element is the word used frequently in quick sort.
+PARTITIONING:
+1. Take a pivot element(generally either the last or first element)
+2. Re-Arrange the array in such a way 
+   a. every value present on the left part of pivot is smaller or equals to the pivot.
+   b. every value presesnt on the right part of the pivot is larger or equals the pivot
+
+1.Naive Partitioning scheme.
+2.Lomuto Partitioning scheme.
+3.Hoare's ppartitionning scheme.
