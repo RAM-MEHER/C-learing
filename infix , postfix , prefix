@@ -1,0 +1,71 @@
+A+b-->Infix form
++AB-->prefix form
+AB+-->postfix form*/
+   infix                   prefix              postfix
+  A+B                       +AB                  AB+
+  C*D                       *CD                  CD*
+  A+B*C                     +A*BC                ABC*+
+  (A+B)*C                  *+ABC                  AB+C* 
+Example:
+1.H+A/S-F
+-> H+AS/-F  (AS/ --> X)
+-> H+X-F 
+-> HX+-F    (HX+ --> Y)
+-> Y-F
+-> YF-
+-> HX+F-
+->HAS/+F-  .
+2.P/F+I+L
+-> PF/+I+L (PF/ --> X)
+-> X+I+L
+-> XI++L  (XI+  --> Y)
+-> Y+L
+-> YL+
+-> XI+L+
+-> PF/I+L+  .
+3.J-A+P*L*B/C-W+J*R-T
+-> J-A+PL**B/C-W+J*R-T  (PL* --> X)
+-> J-A+X*B/C-W+J*R-T
+-> J-A+XB*/C-W+J*R-T  (XB*  --> Y)
+-> J-A+Y/C-W+J*R-T
+-> J-A+YC/-W+J*R-T  (YC/  --> Z)
+-> J-A+Z-W+J*R-T
+-> J-A+Z-W+JR*-T  (JR*  --> U)
+-> J-A+Z-W+U-T
+-> JA-+Z-W+U-T  (JA-  --> V)
+-> V+Z-W+U-T
+-> VZ+-W+U-T  (VZ+ --> D)
+-> D-W+U-T
+-> DW-+U-T  (DW- --> M)
+-> M+U-T
+-> MU+-T  (MU+  --> O)
+-> O-T
+-> OT-+
+-> MU+T-
+-> DW-U+T-
+-> VZ+W-U+T-
+-> JA-Z+W-U+T-
+-> JA-Z+W-JR*+T-
+-> JA-YC/+W-JR*+T-
+-> JA-XB*C/+W-JR*+T-
+-> JA-PL*B*C/+W-JR*+T-  .
+
+CONVERT INFINIX EXPRESSION INTO POSTFIX EXPRESSION USING STACK
+1. You're given a string called infix it contains either uppercase albhabets and 4 kinds of operaters (+ , - , * , /). You need to convert the string into its postfix(RPN) form
+ALGORITHM:
+Maintain priority table:
+*,/ --> 3
++,- --> 2
+operands --> 1
+Step1: Take a string of same length and call it as postfix.
+Step2: Take a stack of characters and take top and set it to -1 (st[], top = -1)
+Step3: Take 2 variables i to run of input infix string j to run on output postfix string and set both to 0.
+Step4: Start running a loop on given input string
+   	if infix[i] is an operand:
+		put it in the output string
+	else:
+		As long as top != -1 and priority(infix[i]) <= priority(stack[top])
+			Keep on popping the element from stack and insert the output string
+
+		Push current character (infix[i]) into the stack
+Step5: If there are any operators left over in the stack directly bring them to the output string from top to bottom
