@@ -1,0 +1,64 @@
+//queue implementation by using arrays.
+
+#include <stdio.h>
+
+ int q[100];
+      int front = 0;
+      int rear = 0;
+      int size;
+      
+      void enqueue(int val){
+          //check full condition 
+          if(rear - front == size){
+              printf("Queue is full\n");
+              return;
+          }
+          q[rear] = val;
+          rear++;
+      }
+      void dequeue(){
+          //check empty condition
+          if(front == rear){
+              printf("Queue is Empty\n");
+              return;
+          }
+          printf("%i is removed\n" , q[front]);
+          front++;
+      }
+    void display(){
+        if(front == rear){
+            printf("queue is empty\n");
+            return;
+        }
+        for(int i = front ; i < rear ; i++){
+            printf("%i " , q[i]);
+        }
+        printf("\n");
+    }
+//............................................................................Main Function.............................................................................
+int main() {
+     printf("Enter the size of the queue\n");
+     scanf("%i" , &size);
+     int ch;
+     while(1){
+         printf("Enter 1 --> Enqueue\n2 --> Dequeue\n3 --> Display\nAny other to exit\n");
+         scanf("%i" , &ch);
+         if(ch == 1){
+             int val;
+             printf("Enter the value to be enqueued\n");
+             scanf("%i" , &val);
+             enqueue(val);
+         }
+         else if(ch == 2){
+             dequeue();
+         }
+         else if(ch == 3){
+             display();
+         }
+         else{
+             break;
+         }
+     }
+      
+    return 0;
+}
